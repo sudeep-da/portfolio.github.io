@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Certifications</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="Images/SA_logo.png" />
+  <style>
+    /* Fullscreen overlay styling - inline */
+    #fullscreen-container {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #fullscreen-image {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .pro-box img {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .pro-box img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Fullscreen navigation arrows */
+    .fullscreen-nav {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10000;
+    }
+
+    .fullscreen-arrow {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .fullscreen-arrow:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Grid layout for certificates */
+    .pro-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+
+    /* Mobile adaptations */
+    @media (max-width: 900px) {
+      .pro-box {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .project {
+        padding: 15px;
+      }
+      .pro-box {
+        grid-template-columns: 1fr;
+      }
+      .fullscreen-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fullPrg">
+    <nav>
+      <div class="top">
+        <h1 class="logo">SA</h1>
+        <div class="hidden">
+          <button aria-label="Menu"><i class="bx bx-menu"></i></button>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="education.html">education</a>
+        <a href="skills.html">skills</a>
+        <a href="projects.html">project</a>
+        <a href="internship.html">internship</a>
+        <a href="certification.html" class="current">certifications</a>
+        <a href="resume.html">resume</a>
+        <a href="contact.html">contact</a>
+      </ul>
+    </nav>
+
+    <!-- Certifications Section -->
+    <div class="project">
+      <h1 class="title">certificates</h1>
+      <div class="pro-box">
+        <!-- Row 1 -->
+        <div class="box"><img src="Certificates/MySQL.jpg" alt="MySQL Certificate" onclick="openFullscreen(this, 0)" /></div>
+        <div class="box"><img src="Certificates/Q_A_B.jpg" alt="QAB Certificate" onclick="openFullscreen(this, 1)" /></div>
+        <div class="box"><img src="Certificates/S_S_I.jpg" alt="SSI Certificate" onclick="openFullscreen(this, 2)" /></div>
+        
+        <!-- Row 2 -->
+        <div class="box"><img src="Certificates/Web Development_certificate.jpg" alt="Web Dev Certificate" onclick="openFullscreen(this, 3)" /></div>
+        <div class="box"><img src="Certificates/HTML.jpg" alt="HTML Certificate" onclick="openFullscreen(this, 4)" /></div>
+        <div class="box"><img src="Certificates/C_N.jpg" alt="C_N Certificate" onclick="openFullscreen(this, 5)" /></div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Image Viewer with Navigation -->
+    <div id="fullscreen-container" onclick="closeFullscreen(event)">
+      <div class="fullscreen-nav">
+        <button class="fullscreen-arrow left-arrow" onclick="navigateFullscreen(-1, event)"><i class="fas fa-chevron-left"></i></button>
+        <button class="fullscreen-arrow right-arrow" onclick="navigateFullscreen(1, event)"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <img id="fullscreen-image" src="">
+    </div>
+
+    <footer>
+      copyright &copy; 2025 | designed by <span>Sudeep</span>
+    </footer>
+  </div>
+
+  <!-- Keep your external script file -->
+  <script src="script.js"></script>
+  
+  <!-- Add inline script for fullscreen functionality -->
+  <script>
+    // Array of all certificate images
+    const certificateImages = [
+      "Certificates/MySQL.jpg",
+      "Certificates/Q_A_B.jpg",
+      "Certificates/S_S_I.jpg",
+      "Certificates/Web Development_certificate.jpg",
+      "Certificates/HTML.jpg",
+      "Certificates/C_N.jpg"
+    ];
+    
+    let currentImageIndex = 0;
+    
+    // Open fullscreen viewer
+    function openFullscreen(imgElement, index) {
+      currentImageIndex = index;
+      const fullscreenContainer = document.getElementById('fullscreen-container');
+      const fullscreenImage = document.getElementById('fullscreen-image');
+      
+      fullscreenImage.src = certificateImages[currentImageIndex];
+      fullscreenContainer.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    // Close fullscreen viewer
+    function closeFullscreen(event) {
+      // Only close if clicking on the background, not the image or buttons
+      if (event.target.id === 'fullscreen-container') {
+        document.getElementById('fullscreen-container').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }
+    }
+    
+    // Navigate between images
+    function navigateFullscreen(direction, event) {
+      event.stopPropagation(); // Prevent closing when clicking arrows
+      
+      currentImageIndex += direction;
+      
+      // Wrap around if at beginning or end
+      if (currentImageIndex < 0) {
+        currentImageIndex = certificateImages.length - 1;
+      } else if (currentImageIndex >= certificateImages.length) {
+        currentImageIndex = 0;
+      }
+      
+      document.getElementById('fullscreen-image').src = certificateImages[currentImageIndex];
+    }
+    
+    // Close with ESC key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        document.getElementById('fullscreen-container').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
+</body>
+</html>

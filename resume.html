@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="Images/SA_logo.png" />
+  <style>
+    .resume-viewer {
+      width: 100%;
+      height: calc(100vh - 160px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .resume-pdf {
+      width: 100%;
+      max-width: 800px;
+      height: 100%;
+      border: none;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    .download-btn {
+      margin-top: 20px;
+    }
+
+    .download-btn button {
+      padding: 10px 20px;
+      background: var(--hoverClr);
+      color: var(--primary);
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .download-btn button:hover {
+      background: var(--font);
+      color: var(--primary);
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+      }
+
+      nav .top {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .resume-viewer {
+        padding: 10px;
+        height: auto;
+      }
+
+      .resume-pdf {
+        height: 70vh;
+        max-width: 100%;
+      }
+
+      .download-btn button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+
+      .title {
+        font-size: 24px;
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fullPrg">
+    <nav>
+      <div class="top">
+        <h1 class="logo">SA</h1>
+        <div class="hidden">
+          <button  aria-label="Menu"><i class="bx bx-menu"></i></button>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="education.html">education</a>
+        <a href="skills.html">skills</a>
+        <a href="projects.html">project</a>
+        <a href="internship.html">internship</a>
+        <a href="certification.html">certifications</a>
+        <a href="resume.html" class="current">resume</a>
+        <a href="contact.html">contact</a>
+      </ul>
+    </nav>
+
+    <!-- Resume PDF Viewer -->
+    <div class="resume">
+      <h1 class="title"><center>My Resume</center></h1>
+      <div class="resume-viewer">
+        <iframe src="S_Resume.pdf" class="resume-pdf"></iframe>
+        <div class="download-btn">
+          <a href="S_Resume.pdf" download>
+            <button><i class="fas fa-download"></i> Download Resume</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      copyright &copy; 2025 | designed by <span>Sudeep</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
