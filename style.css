@@ -327,16 +327,16 @@ nav .hidden {
   max-width: 300px;
   border: 2px solid var(--primary);
   box-shadow: 2px 3px 5px black;
-  filter: grayscale(70%);
+  /*filter: grayscale(70%);*/
   transition: 0.5s;
   border-radius: 10px;
 }
-.about img:hover {
+/*.about img:hover {
   filter: grayscale(0%);
   animation: floting 2s ease-in-out infinite;
   transform: translateY(-10px);
   box-shadow: 10px 20px 5px black;
-}
+}*/
 @keyframes floting {
   50% {
     transform: translateY(10px);
