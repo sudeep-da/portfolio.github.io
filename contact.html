@@ -62,14 +62,23 @@
 
                 <div class="cont-prg">
                     <div class="text">Contact Me</div>
-                    <form id="contactForm">
-                        <div class="up">
-                            <input type="text" placeholder="Your Name" required />
-                            <input type="email" placeholder="Your Email" required />
-                        </div>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit">Submit</button>
-                    </form>
+                    <form action="https://formsubmit.co/ashtekardsudeep@gmail.com" method="POST">
+    <div class="up">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+    </div>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <!-- 🛡 Spam Protection (Honeypot) -->
+    <input type="text" name="_honey" style="display:none">
+
+    <!-- 🔒 Formsubmit Settings -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://sudeep-da.github.io/portfolio.github.io/thankyou.html">
+
+    <button type="submit">Submit</button>
+</form>
                 </div>
             </div>
         </div>
