@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Internships</title>
+  
+  <!-- Enhanced Favicon Implementation -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="Images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="Images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="Images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="fullPrg">
+    <nav>
+      <div class="top">
+        <!-- <h1 class="logo">SA</h1> -->
+        <div class="hidden">
+          <button aria-label="Menu"><i class="bx bx-menu"></i></button>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="internship.html" class="current">INTERNSHIP</a>
+        <a href="certification.html">CERTIFICATIONS</a>
+        <a href="resume.html">RESUME</a>
+        <a href="contact.html">CONTACT</a>
+      </ul>
+    </nav>
+
+    <!-- Internship Section -->
+    <div class="project">
+      <h1 class="title">internship</h1>
+      <div class="internship-container">
+        <!-- Codsoft Internship -->
+        <div class="internship-card">
+          <div class="internship-image">
+            <img src="Internship/Codsoft.jpg" alt="Codsoft Internship" onclick="openInternshipFullscreen(this, 0)" />
+          </div>
+          <div class="internship-details">
+            <h2 class="company-name">CodSoft</h2>
+            <div class="internship-info">
+              <div class="info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="date">February 2025 - February 2025</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-briefcase"></i>
+                <span class="role">Web Development Intern</span>
+              </div>
+            </div>
+            <div class="tasks-section">
+              <h3>Tasks Completed:</h3>
+              <ul class="tasks-list">
+                <p>As a Web Development Intern, I contributed to building,
+                  designing, and maintaining responsive and user-friendly websites.
+                  I worked on real-world projects that involved creating front-end interfaces,
+                  improving website functionality, and integrating backend data,
+                  gaining hands-on experience in full web development workflows.</p> <br>
+                <li>Designed and developed interactive and responsive web pages using HTML, CSS, and JavaScript.</li>
+                <li>Assisted in improving UI/UX design and ensured cross-browser compatibility.</li>
+                <li>Collaborated with senior developers using Git and GitHub for version control.</li>
+                <li>Worked on website optimization for performance and loading speed.</li>
+              </ul>
+            </div>
+            <button class="view-certificate-btn" onclick="openInternshipFullscreen(this.parentElement.parentElement.querySelector('img'), 0)">
+              <i class="fas fa-eye"></i>
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- Leosias Internship -->
+        <div class="internship-card">
+          <div class="internship-image">
+            <img src="Internship/Leosias.jpg" alt="Leosias Internship" onclick="openInternshipFullscreen(this, 1)" />
+          </div>
+          <div class="internship-details">
+            <h2 class="company-name">Leosias Technologies</h2>
+            <div class="internship-info">
+              <div class="info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span class="date">Jauary 2025 - March 2025</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-briefcase"></i>
+                <span class="role">Full-Stack Web Development Intern</span>
+              </div>
+            </div>
+            <div class="tasks-section">
+              <h3>Tasks Completed:</h3>
+              <ul class="tasks-list">
+                <p>During my internship as a Full Stack Web Developer,
+                  I contributed to both the frontend and backend development of dynamic web applications.
+                  I worked closely with the development team to design, build, test, and deploy interactive,
+                  database-driven web solutions using modern web technologies.</p> <br>
+                <li>Designed and Developed responsive user interfaces using HTML, CSS, javaScript.</li>
+                <li>Performed Front-End and Back-End debugging, fixing issues to improve performance and usability.</li>
+                <li>Participated in code reviews, team meetings, and version control using Git & Github.</li>
+                <li>Assisted in deploying web applications on platforms like vercel/Netlify.</li>
+              </ul>
+            </div>
+            <button class="view-certificate-btn" onclick="openInternshipFullscreen(this.parentElement.parentElement.querySelector('img'), 1)">
+              <i class="fas fa-eye"></i>
+              View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Image Viewer with Navigation -->
+    <div id="fullscreen-container" onclick="closeFullscreen(event)">
+      <div class="fullscreen-nav">
+        <button class="fullscreen-arrow left-arrow" onclick="navigateInternshipFullscreen(-1, event)"><i class="fas fa-chevron-left"></i></button>
+        <button class="fullscreen-arrow right-arrow" onclick="navigateInternshipFullscreen(1, event)"><i class="fas fa-chevron-right"></i></button>
+      </div>
+      <img id="fullscreen-image" src="">
+    </div>
+
+    <footer>
+      copyright &copy; 2025 | designed by <span><i>Sudeep</i></span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Resume</title>
+  
+  <!-- Enhanced Favicon Implementation -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" href="Images/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="Images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="Images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="fullPrg">
+    <nav>
+      <div class="top">
+        <!-- <h1 class="logo">SA</h1> -->
+        <div class="hidden">
+          <button aria-label="Menu"><i class="bx bx-menu"></i></button>
+        </div>
+      </div>
+      <ul>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="projects.html">PROJECTS</a>
+        <a href="internship.html">INTERNSHIP</a>
+        <a href="certification.html">CERTIFICATIONS</a>
+        <a href="resume.html" class="current">RESUME</a>
+        <a href="contact.html">CONTACT</a>
+      </ul>
+    </nav>
+
+    <!-- Resume PDF Viewer -->
+    <div class="resume">
+      <h1 class="title"><center>My Resume</center></h1>
+      <div class="resume-viewer">
+        <iframe src="S_Resume.pdf" class="resume-pdf"></iframe>
+        <div class="download-btn">
+          <a href="S_Resume.pdf" download>
+            <button><i class="fas fa-download"></i> Download Resume</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      copyright &copy; 2025 | designed by <span><i>Sudeep</i></span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
